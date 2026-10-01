@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <!--
+    HOTEL NAME: the property is called "The Carrow Hotel" everywhere on this page.
+    To rename it, run ./rename.sh "New Name" (a plain find-and-replace of the
+    exact string "The Carrow Hotel" across index.html). The name is kept as static
+    text on purpose so crawlers and capture tools read it without JavaScript.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Carrow Hotel | Downtown Chicago Design Hotel</title>
+  <meta name="description" content="The Carrow Hotel is a 112-room design hotel in downtown Chicago. Rooftop bar on the 15th floor, a 24-hour gym, co-working lounge and late checkout as standard. Book direct for our lowest rate.">
+  <meta name="theme-color" content="#0f8b8d">
+  <link rel="canonical" href="https://triptease-mktg.github.io/carrow-hotel/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Carrow Hotel">
+  <meta property="og:title" content="The Carrow Hotel | Downtown Chicago Design Hotel">
+  <meta property="og:description" content="A 112-room design hotel in downtown Chicago with a rooftop bar, 24-hour gym and co-working lounge. Book direct for our lowest rate.">
+  <meta property="og:image" content="https://triptease-mktg.github.io/carrow-hotel/images/og-image.webp">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "The Carrow Hotel",
+    "description": "A 112-room design hotel in downtown Chicago with a rooftop bar, 24-hour gym and co-working lounge.",
+    "url": "https://triptease-mktg.github.io/carrow-hotel/",
+    "image": "https://triptease-mktg.github.io/carrow-hotel/images/hero.webp",
+    "logo": "https://triptease-mktg.github.io/carrow-hotel/favicon.svg",
+    "telephone": "+1-312-555-0188",
+    "priceRange": "$329 - $640",
+    "currenciesAccepted": "USD",
+    "checkinTime": "15:00",
+    "checkoutTime": "12:00",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "214 N Carrow Street",
+      "addressLocality": "Chicago",
+      "addressRegion": "IL",
+      "postalCode": "60601",
+      "addressCountry": "US"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Rooftop bar", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "24-hour gym", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Co-working lounge", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Late checkout", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="The Carrow Hotel home">
+        <svg class="brand-mark" width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false">
+          <rect x="1.5" y="1.5" width="27" height="27" fill="none" stroke="#0f8b8d" stroke-width="2"/>
+          <path d="M9 21V9h12M9 15h8" fill="none" stroke="#0f8b8d" stroke-width="2.4" stroke-linecap="square"/>
+        </svg>
+        <span class="brand-name">The Carrow Hotel</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#rooms">Rooms</a>
+        <a href="#rooftop">Rooftop</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="#rooms">Book direct</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="images/hero.webp" alt="The rooftop terrace at The Carrow Hotel at dusk, looking out over the downtown Chicago skyline" width="1600" height="1000" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Downtown Chicago</p>
+        <h1 id="hero-title">Downtown.<br>Done properly.</h1>
+        <p class="hero-lede">One hundred and twelve rooms, a rooftop bar on the fifteenth floor and a checkout time that respects your morning. Direct bookers get our lowest rate and a drink on the roof.</p>
+        <a class="btn btn-primary btn-lg" href="#rooms">See rooms and rates</a>
+      </div>
+    </section>
+
+    <section class="booking-bar" aria-label="Check availability">
+      <div class="container">
+        <form class="booking" action="#rooms" method="get">
+          <div class="field">
+            <label for="checkin">Check-in</label>
+            <input type="date" id="checkin" name="checkin" required>
+          </div>
+          <div class="field">
+            <label for="checkout">Check-out</label>
+            <input type="date" id="checkout" name="checkout" required>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Check availability</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="perks" aria-label="Hotel features">
+      <div class="container perks-inner">
+        <div class="perk" id="rooftop">
+          <span class="perk-num">15</span>
+          <h3>Rooftop bar</h3>
+          <p>Open to guests from 4 pm until late. Cocktails, a short wine list and the best view of the river in the Loop.</p>
+        </div>
+        <div class="perk">
+          <span class="perk-num">24</span>
+          <h3>Hour gym</h3>
+          <p>Lower level, never closed. Concept2 rowers, free weights to 100 lb, Peloton bikes and cold towels.</p>
+        </div>
+        <div class="perk" id="work">
+          <span class="perk-num">02</span>
+          <h3>Co-working floor</h3>
+          <p>Desks, booths and two bookable meeting rooms on the second floor. Fast Wi-Fi, strong coffee, no day pass.</p>
+        </div>
+        <div class="perk">
+          <span class="perk-num">12</span>
+          <h3>Noon checkout</h3>
+          <p>Checkout is 12 pm for everyone. Book direct and we will stretch it to 2 pm when the room is free.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" id="rooms" aria-labelledby="rooms-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Rooms &amp; suites</p>
+            <h2 id="rooms-title">Three ways to stay</h2>
+          </div>
+          <p class="section-lede">Blackout blinds, a proper desk, a Nespresso machine and a rain shower in every room. Rates below are our direct rates, which are always lower than anything you will find on a third-party site.</p>
+        </div>
+
+        <div class="room-strip">
+          <article class="room-card">
+            <img src="images/room-studio.webp" alt="Studio King at The Carrow Hotel: a dark-walled bedroom with a teal headboard and a ring light above the bed" width="1600" height="1067" loading="lazy">
+            <div class="room-body">
+              <div class="room-top">
+                <h3>Studio King</h3>
+                <p class="price"><span class="price-from">from</span> <span class="price-amount">$329</span> <span class="price-unit">/ night</span></p>
+              </div>
+              <p>Our entry room, and still 340 square feet. Charcoal walls, a king bed, a desk that is actually long enough to work at, and a window seat over Carrow Street.</p>
+              <ul class="room-meta">
+                <li>King bed</li>
+                <li>340 sq ft</li>
+                <li>Sleeps 2</li>
+                <li>Floors 3 to 9</li>
+              </ul>
+              <a class="btn btn-outline" href="#rooms">Book direct</a>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <img src="images/room-corner.webp" alt="Corner Room at The Carrow Hotel: a leather armchair and side table beside a floor-to-ceiling window over the city" width="1600" height="1067" loading="lazy">
+            <div class="room-body">
+              <div class="room-top">
+                <h3>Corner Room</h3>
+                <p class="price"><span class="price-from">from</span> <span class="price-amount">$415</span> <span class="price-unit">/ night</span></p>
+              </div>
+              <p>Floor-to-ceiling glass on two sides, a reading chair in the corner, and the skyline doing the rest. King bed, soaking tub, a record player and a short stack of vinyl.</p>
+              <ul class="room-meta">
+                <li>King bed</li>
+                <li>420 sq ft</li>
+                <li>Sleeps 2</li>
+                <li>Floors 10 to 13</li>
+              </ul>
+              <a class="btn btn-outline" href="#rooms">Book direct</a>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <img src="images/room-suite.webp" alt="Skyline Suite at The Carrow Hotel: a wide bed in a dark, minimal bedroom with tall windows and sheer curtains" width="1600" height="1067" loading="lazy">
+            <div class="room-body">
+              <div class="room-top">
+                <h3>Skyline Suite</h3>
+                <p class="price"><span class="price-from">from</span> <span class="price-amount">$640</span> <span class="price-unit">/ night</span></p>
+              </div>
+              <p>The fourteenth floor, one below the bar. A separate living room with a dining table for six, a bedroom with a wall of glass, and a bathroom with a view of its own.</p>
+              <ul class="room-meta">
+                <li>King bed</li>
+                <li>780 sq ft</li>
+                <li>Sleeps 3</li>
+                <li>Floor 14</li>
+              </ul>
+              <a class="btn btn-outline" href="#rooms">Book direct</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div>
+          <p class="eyebrow">About the hotel</p>
+          <h2>A 1927 office building, rebuilt for staying in</h2>
+        </div>
+        <div class="about-copy">
+          <p>The Carrow Hotel occupies the former Carrow Printing Company building on North Carrow Street, two blocks from the river and a six-minute walk from Millennium Park. The building kept its steel frame, its terrazzo lobby floor and its brass elevator doors. Everything else is new.</p>
+          <p>We opened in 2023 with 112 rooms across twelve floors, a co-working floor for guests and locals, a gym that never closes and a rooftop bar that fills up by six. Breakfast is served in the lobby restaurant from 6:30 am, and the coffee bar by the front door pours until 4 pm. The L stops at State and Lake, three minutes away, and O'Hare is forty minutes on the Blue Line.</p>
+          <p>Our direct rate is always our lowest rate. Book with us and you also get free late checkout when the room is free, a welcome drink on the roof and no resort fee, because we do not charge one.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">The Carrow Hotel</p>
+        <p id="location">214 N Carrow Street, Chicago, IL 60601</p>
+      </div>
+      <div>
+        <p>Front desk open 24 hours</p>
+        <p><a href="tel:+13125550188">(312) 555-0188</a> &middot; <a href="mailto:stay@carrowhotel.example">stay@carrowhotel.example</a></p>
+      </div>
+      <p class="footer-legal">&copy; 2026 The Carrow Hotel. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Default the booking widget to a stay two weeks out, two nights long.
+    (function () {
+      var fmt = function (d) { return d.toISOString().slice(0, 10); };
+      var a = new Date(); a.setDate(a.getDate() + 14);
+      var b = new Date(a); b.setDate(b.getDate() + 2);
+      document.getElementById('checkin').value = fmt(a);
+      document.getElementById('checkout').value = fmt(b);
+    })();
+  </script>
+</body>
+</html>
